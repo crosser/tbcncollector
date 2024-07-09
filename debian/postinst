@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+adduser --system --group --home /var/lib/tbcncollector tbcncollector
+install --owner tbcncollector --group tbcncollector --directory /var/lib/tbcncollector
+
+#DEBHELPER#
+
+exit 0

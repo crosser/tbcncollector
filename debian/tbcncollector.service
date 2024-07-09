@@ -1,0 +1,16 @@
+[Unit]
+Description=ThermoBeacon Collector Service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/tbcncollector
+ExecStart=python3 -m tbcncollector $OPTIONS
+KillSignal=INT
+Restart=on-failure
+StandardOutput=journal
+StandardError=inherit
+User=tbcncollector
+Group=tbcncollector
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,25 @@
+Source: tbcncollector
+Maintainer: Eugene Crosser <crosser@average.org>
+Section: misc
+Priority: optional
+Standards-Version: 4.5.1
+X-Python-Version: >= 3.6
+Homepage: http://www.average.org/tbcncollector
+Build-Depends: black,
+               debhelper-compat (= 12),
+               dh-python,
+               mypy,
+               pylint,
+               python3-all,
+               python3-setuptools,
+               python3-bleak
+
+Package: tbcncollector
+Architecture: all
+Section: python
+Depends: adduser,
+         python3-bleak,
+         ${misc:Depends},
+         ${python3:Depends}
+Description: Daemon to collect data from ThermoBeacons
+ Stores beacon data: temperature and humidity in sqlite
