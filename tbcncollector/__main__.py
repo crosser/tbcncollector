@@ -45,7 +45,7 @@ def detection_callback(dev, data):
                             :addr, :batt, :temp, :humid, :time)""",
                     dic)
                 now = time()
-                if now - lastcommit > 100.0:
+                if now - lastcommit > 10.0:
                     db.commit()
                     lastcommit = now
 
