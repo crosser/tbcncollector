@@ -7,6 +7,7 @@ Type=oneshot
 EnvironmentFile=-/etc/default/tbcncollector
 ExecStart=/usr/bin/sqlite3 "" ".param set :rawdb "${RAW_DB} \
 			      ".param set :hrldb "${HOURLY_DB} \
+			      ".timeout 15000" \
 			      ".read /usr/share/tbcncollector/aggregate.sql"
 StandardOutput=journal
 StandardError=inherit
