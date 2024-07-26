@@ -19,6 +19,7 @@ Architecture: all
 Section: python
 Depends: adduser,
          python3-bleak,
+         sqlite3,
          ${misc:Depends},
          ${python3:Depends}
 Description: Daemon to collect data from ThermoBeacons

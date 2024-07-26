@@ -1,0 +1,17 @@
+[Unit]
+Description=Aggregate tbncollector data on hourly basis
+Wants=tbcncollector-hourly.timer
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/tbcncollector
+ExecStart=/usr/bin/sqlite3 "" ".param set :rawdb "${RAW_DB} \
+			      ".param set :hrldb "${HOURLY_DB} \
+			      ".read /usr/share/tbcncollector/aggregate.sql"
+StandardOutput=journal
+StandardError=inherit
+User=tbcncollector
+Group=tbcncollector
+
+[Install]
+WantedBy=multi-user.target

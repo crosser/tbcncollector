@@ -1,3 +1,9 @@
+tbcncollector (1.00) experimental; urgency=low
+
+  * Hourly aggregation
+
+ -- Eugene Crosser <crosser@average.org>  Fri, 26 Jul 2024 22:47:09 +0200
+
 tbcncollector (0.01) experimental; urgency=low
 
   * Initial version

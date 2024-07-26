@@ -6,3 +6,8 @@ export PYBUILD_NAME=tbcncollector
 
 %:
 	dh $@ --with python3 --buildsystem pybuild
+
+override_dh_installsystemd:
+	dh_installsystemd --name=tbcncollector
+	dh_installsystemd --name=tbcncollector-hourly
+

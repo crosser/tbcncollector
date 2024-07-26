@@ -4,7 +4,7 @@ Description=ThermoBeacon Collector Service
 [Service]
 Type=simple
 EnvironmentFile=-/etc/default/tbcncollector
-ExecStart=python3 -m tbcncollector $OPTIONS
+ExecStart=python3 -m tbcncollector $RAW_DB
 KillSignal=INT
 Restart=on-failure
 StandardOutput=journal

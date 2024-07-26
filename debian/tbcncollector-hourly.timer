@@ -1,0 +1,10 @@
+[Unit]
+Description=Aggregate tbncollector data on hourly basis
+Requires=tbcncollector-hourly.service
+
+[Timer]
+Unit=tbcncollector-hourly.service
+OnCalendar=*-*-* *:05:00
+
+[Install]
+WantedBy=timers.target
